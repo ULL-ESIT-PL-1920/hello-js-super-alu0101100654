@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="/hello-js-super-alu0101100654/feed.xml" rel="self" type="application/atom+xml" /><link href="/hello-js-super-alu0101100654/" rel="alternate" type="text/html" /><updated>2020-04-11T19:06:13+01:00</updated><id>/hello-js-super-alu0101100654/feed.xml</id><title type="html">Reto P10 Lexer Generator</title><subtitle>Informe del reto de la práctica 10.</subtitle><entry><title type="html">Informe Reto P10</title><link href="/hello-js-super-alu0101100654/informe/2020/04/11/informeP10.html" rel="alternate" type="text/html" title="Informe Reto P10" /><published>2020-04-11T17:49:47+01:00</published><updated>2020-04-11T17:49:47+01:00</updated><id>/hello-js-super-alu0101100654/informe/2020/04/11/informeP10</id><content type="html" xml:base="/hello-js-super-alu0101100654/informe/2020/04/11/informeP10.html">&lt;h2 id=&quot;introducción&quot;&gt;Introducción&lt;/h2&gt;
+&lt;p&gt;El documento que ante usted se presenta, explica y detalla los aspectos fundamentales de la práctica realizada. La práctica en sí, está dirigida al desarrollo de una &lt;strong&gt;acción&lt;/strong&gt; de GitHub extremadamente básica.&lt;/p&gt;
+
+&lt;h2 id=&quot;recursos-iniciales&quot;&gt;Recursos iniciales&lt;/h2&gt;
+&lt;p&gt;Como puede resultar lógico, es imposible desarrollar una &lt;strong&gt;acción&lt;/strong&gt; de GitHub si no se posee una cuenta registrada en el servicio web. De igual manera, se requiere la creación de un repositorio específico para alojar la acción desarrollada. Estos son, en principio, los únicos requisitos realmente fundamentales para poder desarrollar una &lt;strong&gt;acción&lt;/strong&gt;. Si va a trabajar con &lt;strong&gt;JS&lt;/strong&gt;, puede que le resulte de interés definir también un &lt;strong&gt;package.json&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;A la hora de crear el repositorio, es muy importante que su acceso se defina como &lt;strong&gt;público&lt;/strong&gt;. Si se define como &lt;strong&gt;privado&lt;/strong&gt;, ningún otro repositorio podría utilizar la &lt;strong&gt;acción&lt;/strong&gt; desarrollada, por lo que la utilidad de la misma sería estrictamente local.&lt;/p&gt;
+
+&lt;h2 id=&quot;desarrollo-de-la-acción&quot;&gt;Desarrollo de la acción&lt;/h2&gt;
+&lt;p&gt;Las acciones se deben desarrollar en un fichero con extensión &lt;strong&gt;yml&lt;/strong&gt; y pueden posicionarse sin ningún tipo de problema en la raíz del repositorio. La acción a desarrollar debe tener campos que especifiquen los siguientes elementos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Nombre.&lt;/li&gt;
+  &lt;li&gt;Descripción.&lt;/li&gt;
+  &lt;li&gt;Entradas (inputs) que requiere la acción.
+    &lt;ul&gt;
+      &lt;li&gt;Descripción de las entradas.&lt;/li&gt;
+      &lt;li&gt;Valor por defecto (De haberlo).&lt;/li&gt;
+      &lt;li&gt;Si se requiere o no (required).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Salidas (outputs) de la acción.
+    &lt;ul&gt;
+      &lt;li&gt;Descripción de la salida.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Los programas que ejecuta (runs).
+    &lt;ul&gt;
+      &lt;li&gt;Qué utiliza para ejecuarlos (using).&lt;/li&gt;
+      &lt;li&gt;El nombre del programa (main).&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;La acción que se ha desarrollado se trata de una cuya única función es imprimir un &lt;em&gt;“Hola Mundo”&lt;/em&gt; por la consola, y además, mostrar la hora en la que se produjo el saludo. El código de dicha acción, es el siguiente:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yml&quot; data-lang=&quot;yml&quot;&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Hello&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;World'&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Greet&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;someone&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;record&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;time'&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;inputs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;who-to-greet&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# id of input&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Who&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;greet'&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;required&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;default&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;World'&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;outputs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# id of output&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;The&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;we&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;greeted&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;you'&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;runs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;using&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;node12'&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;./dist/index.js'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;escribir-el-código-de-la-acción&quot;&gt;Escribir el código de la acción&lt;/h2&gt;
+&lt;p&gt;El código de la &lt;strong&gt;acción&lt;/strong&gt; es, sencillamente, el código de los programas que esta ejecuta (aquellos especificados en la sección &lt;code class=&quot;highlighter-rouge&quot;&gt;runs&lt;/code&gt;) y, por lo general, se elaboran en &lt;strong&gt;&lt;em&gt;JS&lt;/em&gt;&lt;/strong&gt;, más concretamente, en &lt;strong&gt;&lt;em&gt;NodeJS&lt;/em&gt;&lt;/strong&gt;. 
+El código se puede elaborar de la manera que el usario/desarrollador prefiera, pero es importante que, en el proceso, se usen las herramientas de desarrollo para acciones disponibles para &lt;strong&gt;&lt;em&gt;NodeJS&lt;/em&gt;&lt;/strong&gt;. Estas herramientas, que en la práctica se corresponden con una serie de módulos que deben ser incluídos en el fichero con el código fuente, permiten controlar la entrada y salida de las acciones entre otras tareas, como pueden ser aquellas relacionadas a la generación de mensajes de debug.
+Para instalar estas herramientas, se deben utilizar los siguientes comandos.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; @actions/core
+npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; @actions/github&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Existen muchas maneras de poder utilizar estas herramientas. Para el código de la acción desarrollada, se han usado para controlar la entrada y salida de la acción.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;core&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;@actions/core&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;github&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;@actions/github&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// `who-to-greet` input defined in action metadata file&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;nameToGreet&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getInput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;who-to-greet&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`Hello &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;nameToGreet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;!`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toTimeString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setOutput&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Get the JSON webhook payload for the event that triggered the workflow&lt;/span&gt;
+  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;payload&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;JSON&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stringify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;github&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;context&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;undefined&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`The event payload: &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;payload&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;catch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;core&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setFailed&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Como se puede comprobar y tal como se mencionó anteriormente, se han usando estas herramienta para controlar la entrada (&lt;code class=&quot;highlighter-rouge&quot;&gt; const nameToGreet = core.getInput('who-to-greet')&lt;/code&gt;) y salida (&lt;code class=&quot;highlighter-rouge&quot;&gt;core.setOutput(&quot;time&quot;, time)&lt;/code&gt;) de la acción. También se han utilizado para control de errores (&lt;code class=&quot;highlighter-rouge&quot;&gt;core.setFailed(error.message)&lt;/code&gt;) y para obtener la carga útil del evento disparador (&lt;code class=&quot;highlighter-rouge&quot;&gt;const payload = JSON.stringify(github.context.payload, undefined, 2)&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Además del código de los programas en los que se basa la &lt;strong&gt;acción&lt;/strong&gt;, es también recomendable redactar un &lt;strong&gt;&lt;em&gt;README.md&lt;/em&gt;&lt;/strong&gt; que explique a los usuarios el funcionamiento de la &lt;strong&gt;acción&lt;/strong&gt; desarrollada y, en especial, como esta sebe ser utilizada.&lt;/p&gt;
+
+&lt;h2 id=&quot;subir-la-acción-a-github&quot;&gt;Subir la acción a GitHub&lt;/h2&gt;
+&lt;p&gt;Para que &lt;strong&gt;acción&lt;/strong&gt; puede ser utilizada, simplemente debe ser “empujada” a GitHub. No obstante, es importante que junto al &lt;strong&gt;yml&lt;/strong&gt; de la acción se suba también el código fuente que ejecuta y las dependencias de este, usualmente, el directorio &lt;strong&gt;node_modules&lt;/strong&gt;. Si no se desea subir este directorio, una alternativa consiste en crear un nuevo fichero &lt;strong&gt;JS&lt;/strong&gt; que contenga las definiciones necesarias para no recurrir a dependencia alguna. Es decir, que posea en su extensión el código de los módulos establecidos en &lt;strong&gt;node_modules&lt;/strong&gt;. Esto se puede hacer muy fácilmente a través de la herramienta &lt;strong&gt;zeit/ncc&lt;/strong&gt;, un módulo de &lt;strong&gt;NodeJS&lt;/strong&gt;. Si decide utilizarse, debe especificarse en el &lt;strong&gt;yml&lt;/strong&gt; de la acción el nuevo fichero &lt;strong&gt;JS&lt;/strong&gt; generado tras su uso en lugar del previo. Por lo general, este se puede encontrar en el directorio &lt;code class=&quot;highlighter-rouge&quot;&gt;dist&lt;/code&gt; que se crea tras compilar con &lt;code class=&quot;highlighter-rouge&quot;&gt;ncc&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;probar-la-acción&quot;&gt;Probar la acción&lt;/h2&gt;
+&lt;p&gt;Ahora que la acción se encuentra en los repositorios de GitHub, esta puede ser utilizada sin ningún tipo de problema. No obstante, resulta apropiado asegurarse de su correcto funcionamiento. Para ello, basta con, en otro repo, intentar utilizar la acción. Si lo logramos, entonces la acción es perfectamente funcional.&lt;/p&gt;
+
+&lt;p&gt;Para poder utilizar una acción en un repositorio, debe crearse un archivo &lt;strong&gt;yml&lt;/strong&gt; en el directorio &lt;code class=&quot;highlighter-rouge&quot;&gt;.github/workflows&lt;/code&gt; (si no existe, crearlo). El contenido de este fichero es distinto al anteriormente definido. La principal diferencia radica en la necesidad de indicar el evento que hará que se ejecuten las acciones/comandos especificados. Por lo general, suele utilizarse el evento &lt;code class=&quot;highlighter-rouge&quot;&gt;push&lt;/code&gt;, que actua cuando se produce tal acción. En este fichero, no se definen acciones al uso, sino más bien &lt;strong&gt;trabajos&lt;/strong&gt; que deben ser realizados. Estos trabajos se dividen en tareas que, en esencia, pueden ser de dos tipos:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Comandos.&lt;/li&gt;
+  &lt;li&gt;Acciones.
+Para el segundo caso, que es el que nos atañe, se debe especificar de dónde se puede obtener la acción a ejecutar, así como los argumentos de entrada de la misma. Adicionalmente, y teniendo en cuenta que para gestionar este proceso GitHub construye una máquina virtual, debe especificarse la distribución de Linux a utilzar (entre las disponibles), así como los módulos a instalar (si fuera necesario), cuestión que, cuando se trata de acciones, no suele suceder o ser necesaria.
+Para la &lt;strong&gt;acción&lt;/strong&gt; desarrollada, se ha creado el siguiente &lt;strong&gt;yml&lt;/strong&gt; para ponerla a prueba:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yml&quot; data-lang=&quot;yml&quot;&gt;&lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Using hello world&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;pi&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;na&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;hello_world_job&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ubuntu-latest&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;A job to say hello&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# To use this repository's private action, you must check out the repository&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Checkout&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;actions/checkout@v2&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Hello world action step&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ULL-ESIT-PL-1920/hello-js-action-alu0101100654@v2.1&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;hello&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+          &lt;span class=&quot;na&quot;&gt;who-to-greet&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Florentín&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Pérez'&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# Use the output from the `hello` step&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Get the output time&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;echo &quot;The time was $&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;El resultado de la ejecución puede ser comprobado en la sección &lt;code class=&quot;highlighter-rouge&quot;&gt;Àctions&lt;/code&gt; del repositorio de GitHub correspondiente. Si no ha habido fallo alguno, entonces el proceso ha sido satisfactorio.&lt;/p&gt;</content><author><name></name></author><summary type="html">Introducción El documento que ante usted se presenta, explica y detalla los aspectos fundamentales de la práctica realizada. La práctica en sí, está dirigida al desarrollo de una acción de GitHub extremadamente básica.</summary></entry></feed>
